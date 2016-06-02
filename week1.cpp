@@ -46,11 +46,7 @@ int main()
 
     /*get 16 words*/
     cout<<"Input 16 words."<<endl;
-    for (j=0; j<16; j++) {
-                cin>>input[j];
-        
-    }
-    
+    cin>>input;
     
     /*input error*/
     if (strlen(input)<16) {
@@ -60,9 +56,9 @@ int main()
     
     /*sort input*/
     qsort(input,16,sizeof(char),int_sort);
-    for (i=0; i<16; i++) {
-        cout<<input[i];
-    }
+//    for (i=0; i<16; i++) {
+//        cout<<input[i];
+//    }
     cout<<endl;
     
     /*compare*/
@@ -107,6 +103,7 @@ int main()
     }
     
     /*display result*/
+    cout<<"result ->"<<endl;
     for (i=0; i<sizeof(num)/sizeof(int); i++) {
         if (strlen(words[num[i]])==m) {
             cout<<words[num[i]]<<endl;
