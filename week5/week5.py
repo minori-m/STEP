@@ -29,8 +29,10 @@ def makedictfromdata(f):
 
 def distribute(dict):
     for key in dict:
-        for i in range(0,len(dict[key])-2):
-            dict[dict[key][2+i]][1] += dict[key][0]/(len(dict[key])-2)
+        if len(dict[key])-2 > 0:
+            for i in range(0,len(dict[key])-2):
+                dict[dict[key][2+i]][1] += dict[key][0]/(len(dict[key])-2)
+        else : dict[key][1] += dict[key][0]
     return dict
 
 def updatedict(dict):
@@ -66,12 +68,13 @@ def show(dict):
 dict = makedictfromdata(f)
 max = 2.0
 
-#print dict
+print dict
 
 while max>1:
     dict = distribute(dict)
     max = maxdifference(dict)
     dict = updatedict(dict)
+    print dict
 
 show(dict)
 print 'sum=%s'% (confirm(dict))
