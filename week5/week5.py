@@ -68,13 +68,13 @@ def show(dict):
 dict = makedictfromdata(f)
 max = 2.0
 
-print dict
+#print dict
 
 while max>1:
     dict = distribute(dict)
     max = maxdifference(dict)
     dict = updatedict(dict)
-    print dict
+#    print dict
 
 show(dict)
 print 'sum=%s'% (confirm(dict))
