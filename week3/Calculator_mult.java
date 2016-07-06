@@ -105,7 +105,6 @@ public class Calculator_mult {
     
     static double evaluatePlus(ArrayList<Number> array) {
         double answer = 0;
-        array.get(0).key = "+";
         int i = 1;
         while (i < array.size()) {
             if (array.get(i).key == null) {
@@ -128,6 +127,7 @@ public class Calculator_mult {
         Number divide = new Number();
         multiply.key = "*";
         divide.key = "/";
+        multiply.value = 0.0;
         
         while (array.contains(multiply) || array.contains(divide)){
             System.out.println("Loop");
